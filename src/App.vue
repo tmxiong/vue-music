@@ -1,14 +1,18 @@
 <template>
   <div id="app">
     <m-header></m-header>
+    <tab></tab>
+    <router-view></router-view>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import MHeader from '@/components/m-header/m-header.vue';
+  import Tab from '@/components/tab/tab';
   export default {
     components: {
       MHeader,
+      Tab
     }
   }
 </script>
@@ -17,5 +21,6 @@
   @import "./common/stylus/variable.styl"
 
   #app
-    color: $color-theme
+    color: $color-theme;
+    background-color: $color-background
 </style>
