@@ -18,8 +18,8 @@
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
+  @import "./common/stylus/reset.styl"
   @import "./common/stylus/variable.styl"
-
   #app
     color: $color-theme;
     background-color: $color-background
