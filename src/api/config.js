@@ -17,3 +17,4 @@ export const options = {
 };
 
 export const ERR_OK = 0;
+export const RECOMMENT_URL = '/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg';

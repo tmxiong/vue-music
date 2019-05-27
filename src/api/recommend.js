@@ -1,9 +1,8 @@
 import jsonp from '@/common/js/jsonp'
-import {commonParams, options} from './config'
+import {commonParams, options, RECOMMENT_URL} from './config'
 import axios from 'axios';
 
-export function getRecommend(_this) {
-  const url = '/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg';
+export function getRecommend() {
 
   const data = Object.assign({}, commonParams, {
     platform: 'h5',
@@ -12,7 +11,7 @@ export function getRecommend(_this) {
   })
 
   // return jsonp(url, data, options)
-  return this.$axios.get(url, {
+  return this.$axios.get(RECOMMENT_URL, {
     params: data,
   }).then((res) => {
     return Promise.resolve(res.data)
