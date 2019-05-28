@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import fastclick from 'fastclick'
 import Axios from 'axios';
+import './common/stylus/reset.styl'
 fastclick.attach(document.body)
 Vue.config.productionTip = false
 
