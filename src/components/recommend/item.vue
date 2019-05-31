@@ -1,8 +1,17 @@
 <template>
   <div class="item">
-    <img :src="itemImg" alt="">
-    <span class="title" v-html="title"></span>
-    <span class="sub-title" v-html="subTitle"></span>
+    <div class="img-container">
+      <img :src="itemImg" alt="">
+      <div class="listen-num" v-show="showListenCount">
+        <i class="icon-music"></i>
+        <span>{{listenCount}}</span>
+      </div>
+      <i class="icon-play"></i>
+    </div>
+
+    <span class="title">{{title}}</span>
+    <span class="sub-title">{{subTitle}}</span>
+
   </div>
 </template>
 
@@ -21,17 +30,18 @@
         type: String,
         default: 'http://y.gtimg.cn/music/photo/radio/track_radio_307_13_1.jpg',
       },
-      showListenerNum: {
+      showListenCount: {
         type: Boolean,
         default: false
+      },
+      listenCount: {
+        type: Number,
+        default: 0
       }
     },
     data() {
       return {
-        title: this.title,
-        subTitle: this.subTitle,
-        itemImg: this.itemImg,
-        showListenerNum: this.showListenerNum
+
       }
     }
   }
@@ -45,9 +55,13 @@
     align-items flex-start
     height auto
     background-color #fff
+    margin-bottom 20px
+    .img-container
+      position relative
+      color #fff
     img
       width 100%
-    span
+    > span
       line-height 24px
       font-size 14px
       color #222
@@ -59,4 +73,20 @@
     .sub-title
       font-size 12px
       line-height 20px
+    .listen-num
+      display flex
+      flex-direction row
+      position absolute
+      bottom 0
+      align-items center
+      width 100%
+      height 30px
+    .icon-play
+      font-size 25px
+      position absolute
+      right 5px
+      z-index 99
+      bottom 5px
+
+
 </style>
